@@ -1,4 +1,6 @@
 import React from "react";
+import {InputStyle, Label} from "../Styles/InputStyle";
+import {Boton, ButtonCenter} from "../Styles/Boton";
 
 export const ConsultaClima = ({ setConsulta, setCiudad,ciudad, consultarApi }) =>{
 
@@ -10,22 +12,25 @@ export const ConsultaClima = ({ setConsulta, setCiudad,ciudad, consultarApi }) =
         ciudad.trim() === '' && console.log('campo vacio')
         setConsulta(ciudad)
     }
-
     return(
         <div>
-            <form onSubmit={onSubmitConsulta}>
-                <input
+           <form onSubmit={onSubmitConsulta}>
+               <Label htmlFor={ciudad}> Ingresa la ciudad </Label>
+                <InputStyle
                     id='ciudad'
                     name='ciudad'
                     value={ciudad}
                     placeholder='ciudad'
                     onChange={handleChange}
                 />
-                <button
-                    onClick={consultarApi}
-                >  Enviar </button>
+               <ButtonCenter>
+                   <Boton
+                       onClick={consultarApi}
+                   >  Enviar
+                   </Boton>
+               </ButtonCenter>
+
             </form>
         </div>
-
     )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import {Boton} from "../Styles/Boton";
 
 export const ClimaActual = ({consulta}) => {
 
@@ -9,7 +10,7 @@ export const ClimaActual = ({consulta}) => {
             <h4> Humedad: {consulta.main?.humidity}%</h4>
             <h5>Nubosidad: {consulta.clouds?.all}%</h5>
             <h5> Velocidad del viento: {consulta.wind?.speed} mts/s</h5>
-            <button> Guardar</button>
+            <Boton> Guardar</Boton>
         </div>
     )
 }
