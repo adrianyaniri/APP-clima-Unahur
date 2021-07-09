@@ -2,25 +2,25 @@ import React, {useEffect, useState} from "react";
 import './App.css';
 import {Fragment} from "react";
 import {ConsultaClima} from "./components/ConsultaClima";
+import {ClimaActual} from "./components/ClimaActual";
+
+
 
 const KEY = 'eaed9e10df601aab920b0f2f1e13df89'
-const consultaInicial = {
-    ciudad:'Buenos Aires',
-    pais: 'Argentina'
-}
+const consultaInicial = 'Hurlingham'
 
 function App() {
-    const [consulta, setConsulta] = useState(consultaInicial)
+    const[ consulta, setConsulta ] = useState({})
+    const[ ciudad, setCiudad] = useState(consultaInicial)
 
-    const { ciudad, pais } = consultaInicial
-    const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&units=metric&appid=${KEY}`
+    const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=${KEY}`
 
     const consultarAPI = async () => {
         try {
             const consulta = await fetch(APIURL)
             const resp = await (await consulta).json()
             setConsulta(resp)
-            console.log(resp)
+            setCiudad('')
         } catch (e) {
             console.log(e)
         }
@@ -29,12 +29,17 @@ function App() {
         consultarAPI()
     }, [])
 
-
     return (
         <Fragment>
-            <h1> App Clima </h1>
+
             <ConsultaClima
-                ciudad={consulta}
+                setConsulta={setConsulta}
+                consultarApi={consultarAPI}
+                setCiudad={setCiudad}
+                ciudad={ciudad}
+            />
+            <ClimaActual
+                consulta={consulta}
             />
         </Fragment>
     );
