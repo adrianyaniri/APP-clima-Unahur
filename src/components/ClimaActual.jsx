@@ -1,16 +1,21 @@
 import React from "react";
-import {Boton} from "../Styles/Boton";
+import {ContendeorTarjeta, Data, TarjetaClima, Titulo} from "../Styles/TarjetaClima";
 
 export const ClimaActual = ({consulta}) => {
 
     return(
-        <div>
-            <h3>Ciudad: {consulta.name} </h3>
-            <h4> Temperatura: {consulta.main?.temp}°</h4>
-            <h4> Humedad: {consulta.main?.humidity}%</h4>
-            <h5>Nubosidad: {consulta.clouds?.all}%</h5>
-            <h5> Velocidad del viento: {consulta.wind?.speed} mts/s</h5>
-            <Boton> Guardar</Boton>
-        </div>
+        <ContendeorTarjeta>
+            <TarjetaClima>
+                <Titulo> Clima Actual </Titulo>
+                <Data>Ciudad: {consulta.name} </Data>
+                <Data> Temperatura: {consulta.main?.temp}°</Data>
+                <Data> Humedad: {consulta.main?.humidity}%</Data>
+                <Data>Nubosidad: {consulta.clouds?.all}%</Data>
+                <Data> Velocidad del viento: {consulta.wind?.speed} mts/s</Data>
+            </TarjetaClima>
+        </ContendeorTarjeta>
+
+
+
     )
 }

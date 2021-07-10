@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Boton = styled.button`
   height: 45px;
   line-height: 45px;
-  width: 30%;
+  width: 50%;
   font-weight: bold;
   background: #000;
   color: #fff;
@@ -21,5 +21,5 @@ export const ButtonCenter = styled.div`
   flex-direction: column;
   align-items: flex-start;
   grid-column: span 2;
-  padding:5px;
+  padding-top: 8px;
 `

@@ -3,6 +3,8 @@ import './App.css';
 import {Fragment} from "react";
 import {ConsultaClima} from "./components/ConsultaClima";
 import {ClimaActual} from "./components/ClimaActual";
+import {Contenedor} from "./Styles/Contenedor";
+import {TarjetaClima} from "./Styles/TarjetaClima";
 
 
 
@@ -31,16 +33,17 @@ function App() {
 
     return (
         <Fragment>
-
-            <ConsultaClima
-                setConsulta={setConsulta}
-                consultarApi={consultarAPI}
-                setCiudad={setCiudad}
-                ciudad={ciudad}
-            />
-            <ClimaActual
-                consulta={consulta}
-            />
+            <Contenedor>
+                <ConsultaClima
+                    setConsulta={setConsulta}
+                    consultarApi={consultarAPI}
+                    setCiudad={setCiudad}
+                    ciudad={ciudad}
+                />
+                <ClimaActual
+                    consulta={consulta}
+                />
+            </Contenedor>
         </Fragment>
     );
 }

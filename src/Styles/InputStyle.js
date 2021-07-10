@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
-import {css} from "@emotion/react";
+
 
 export const colores = {
     borde: "#0075ff",
-    borde2: '#000',
+    borde2: '#e50202',
     exito: '#1ed12d'
 }
 export const Label = styled.label`
   display: block;
-  font-width: 700;
+  font-width: 800;
   padding: 10px;
   min-height: 40px;
   cursor: pointer;
@@ -17,10 +17,10 @@ export const Label = styled.label`
 export const GrupInput = styled.div`
   position: relative;
   z-index: 90;
+ 
 `
-
 export const InputStyle = styled.input`
-  width: 25%;
+  width: 40%;
   background: #fff;
   border-radius: 3px;
   height: 45px;

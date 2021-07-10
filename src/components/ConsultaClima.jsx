@@ -1,6 +1,7 @@
 import React from "react";
-import {InputStyle, Label} from "../Styles/InputStyle";
+import {GrupInput, InputStyle, Label} from "../Styles/InputStyle";
 import {Boton, ButtonCenter} from "../Styles/Boton";
+import {Formulario} from "../Styles/Formulario";
 
 export const ConsultaClima = ({ setConsulta, setCiudad,ciudad, consultarApi }) =>{
 
@@ -13,24 +14,28 @@ export const ConsultaClima = ({ setConsulta, setCiudad,ciudad, consultarApi }) =
         setConsulta(ciudad)
     }
     return(
-        <div>
-           <form onSubmit={onSubmitConsulta}>
-               <Label htmlFor={ciudad}> Ingresa la ciudad </Label>
-                <InputStyle
-                    id='ciudad'
-                    name='ciudad'
-                    value={ciudad}
-                    placeholder='ciudad'
-                    onChange={handleChange}
-                />
-               <ButtonCenter>
-                   <Boton
-                       onClick={consultarApi}
-                   >  Enviar
-                   </Boton>
-               </ButtonCenter>
+           <Formulario onSubmit={onSubmitConsulta}>
+               <div>
+                   <Label htmlFor={ciudad}> Ingresa la ciudad </Label>
+                   <GrupInput>
+                       <InputStyle
+                           id='ciudad'
+                           name='ciudad'
+                           value={ciudad}
+                           placeholder='ciudad'
+                           onChange={handleChange}
+                       />
+                       <ButtonCenter>
+                           <Boton
+                               onClick={consultarApi}
+                           >  Enviar
+                           </Boton>
+                       </ButtonCenter>
+                   </GrupInput>
+               </div>
 
-            </form>
-        </div>
+
+            </Formulario>
+
     )
 }
