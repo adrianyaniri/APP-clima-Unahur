@@ -15,7 +15,5 @@ export const ClimaActual = ({consulta}) => {
             </TarjetaClima>
         </ContendeorTarjeta>
 
-
-
     )
 }

@@ -4,16 +4,19 @@ import {Fragment} from "react";
 import {ConsultaClima} from "./components/ConsultaClima";
 import {ClimaActual} from "./components/ClimaActual";
 import {Contenedor} from "./Styles/Contenedor";
-import {TarjetaClima} from "./Styles/TarjetaClima";
-
-
+import {HistorialClima} from "./components/HistorialClima";
 
 const KEY = 'eaed9e10df601aab920b0f2f1e13df89'
-const consultaInicial = 'Hurlingham'
 
 function App() {
+    let consultaInicial = JSON.parse(localStorage.getItem('consultas'))
+    if(!consultaInicial){
+        consultaInicial = []
+    }
+
     const[ consulta, setConsulta ] = useState({})
     const[ ciudad, setCiudad] = useState(consultaInicial)
+    const[consultas ,setConsultas] = useState(consulta)
 
     const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=${KEY}`
 
@@ -44,6 +47,9 @@ function App() {
                     consulta={consulta}
                 />
             </Contenedor>
+            <HistorialClima
+                consultas={consultas}
+            />
         </Fragment>
     );
 }

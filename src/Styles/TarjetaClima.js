@@ -21,6 +21,7 @@ export const TarjetaClima = styled.div`
     
   }
 `
+
 export const Titulo = styled.h1`
   color: #424141;
   height: 50px;
