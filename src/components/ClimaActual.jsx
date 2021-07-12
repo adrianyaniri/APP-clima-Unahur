@@ -7,7 +7,7 @@ export const ClimaActual = ({consulta}) => {
         <ContendeorTarjeta>
             <TarjetaClima>
                 <Titulo> Clima Actual </Titulo>
-                <Data>Ciudad: {consulta.name} </Data>
+                <Data>Ciudad: {consulta.name} - {consulta.sys?.country}</Data>
                 <Data> Temperatura: {consulta.main?.temp}°</Data>
                 <Data> Humedad: {consulta.main?.humidity}%</Data>
                 <Data>Nubosidad: {consulta.clouds?.all}%</Data>

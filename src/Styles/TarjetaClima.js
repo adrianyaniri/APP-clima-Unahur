@@ -18,7 +18,6 @@ export const TarjetaClima = styled.div`
   &:hover {
     box-shadow: 3px 0 30px rgba(163, 163, 163, 1);
     border: 3px solid ${colores.borde};
-    
   }
 `
 
