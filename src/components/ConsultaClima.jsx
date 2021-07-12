@@ -16,7 +16,7 @@ export const ConsultaClima = ({ setConsulta, setCiudad,ciudad, consultarApi, ciu
     return(
            <Formulario onSubmit={onSubmitConsulta}>
                <div>
-                   <Label htmlFor={ciudad}> Ingresa la ciudad </Label>
+                   <Label htmlFor={ciudad}> Ciudad </Label>
                    <GrupInput>
                        <InputStyle
                            id='ciudad'

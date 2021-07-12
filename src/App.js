@@ -32,7 +32,7 @@ function App() {
         consultarAPI()
         let ciudadInicial = JSON.parse(localStorage.getItem('ciudad'))
         ciudadInicial
-            ? localStorage.setItem('ciudad',JSON.stringify(ciudad))
+            ? localStorage.setItem('ciudad',JSON.stringify(...ciudad))
             : localStorage.setItem('ciudad',JSON.stringify([]))
     }, [])
 
